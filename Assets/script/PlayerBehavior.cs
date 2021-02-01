@@ -14,13 +14,13 @@ public class PlayerBehavior : MonoBehaviour
     private float hInput;
 
     //1.1
-    private RigidBody _rb;
+    private Rigidbody _rb;
 
     //2.1
     void Start()
     {
         //3.1
-        _rb = GetComponent<RigidBody>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     void update ()
