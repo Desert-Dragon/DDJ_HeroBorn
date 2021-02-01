@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/DDJ_HeroBorn.unity
+    guid: 92784d321df54164ab35092855584ccd
   m_configObjects: {}
