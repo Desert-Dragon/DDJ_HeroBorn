@@ -16,7 +16,7 @@ public class CameraBehavior : MonoBehaviour
         target = GameObject.Find("Player").transform;
     }
     //4
-    void Lateupdate()
+    void LateUpdate()
     {
         //5
         this.transform.position = target.TransformPoint(camOffset);
