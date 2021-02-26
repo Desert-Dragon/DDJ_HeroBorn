@@ -12,8 +12,21 @@ public class EnemyBehavior : MonoBehaviour
 
     private int locationIndex = 0;
     private UnityEngine.AI.NavMeshAgent agent;
-
     public Transform player;
+    private int _lives = 3;
+    public int EnemyLives
+    {
+        get { return _lives;}
+        private set
+        {
+            _lives = value;
+            if (_lives <= 0)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Tango Down.");
+            }
+        }
+    }
 
 
     void Start()
@@ -78,5 +91,16 @@ public class EnemyBehavior : MonoBehaviour
         if(other.name == "Player")
         {gameManager.damage = false;}
     }
-
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Bullet(Clone)")
+        {
+            EnemyLives -= 1;
+            Debug.Log("Hit!");
+        }
+        if(collision.gameObject.name == "Player")
+        {
+            gameManager.Invoke("instaDeath", 0.1f);
+        }
+    }
 }
