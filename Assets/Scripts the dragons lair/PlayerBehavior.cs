@@ -53,13 +53,6 @@ public class PlayerBehavior : MonoBehaviour
         //6
         this.transform.Rotate(Vector3.up * hInput * Time.deltaTime);
         */
-    }
-    void FixedUpdate()
-    {
-        Vector3 rotation = Vector3.up * hInput;
-        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
-        _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
-        _rb.MoveRotation(_rb.rotation * angleRot);
         if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
@@ -74,6 +67,14 @@ public class PlayerBehavior : MonoBehaviour
             Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
             bulletRB.velocity = this.transform.forward * bulletSpeed;
         }
+    }
+    void FixedUpdate()
+    {
+        Vector3 rotation = Vector3.up * hInput;
+        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
+        _rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
+        _rb.MoveRotation(_rb.rotation * angleRot);
+        
     }
     private bool IsGrounded()
     {

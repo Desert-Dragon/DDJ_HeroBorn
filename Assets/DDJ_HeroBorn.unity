@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 777118741}
-  enemy: {fileID: 691147429}
+  enemy: {fileID: 0}
 --- !u!135 &512757754
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -782,23 +782,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1189767132462922108, guid: 1d05f274980b73748baf2dee7da0d079, type: 3}
   m_PrefabInstance: {fileID: 1189767131773873112}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &691147429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691147428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6191a2c5f947529419d086bd2d9b7db9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 777118741}
-  isTracking: 1
-  patrolRoute: {fileID: 1593649612}
-  locations: []
-  player: {fileID: 757680223}
 --- !u!195 &691147434
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1200,7 +1183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719175900951564342, guid: da70a3d8c1bf90d46bf94596525c5956, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.780455
+      value: 15.780455
       objectReference: {fileID: 0}
     - target: {fileID: 6719175900951564342, guid: da70a3d8c1bf90d46bf94596525c5956, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2453,6 +2436,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1189767132462922109, guid: 1d05f274980b73748baf2dee7da0d079, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202740545825364640, guid: 1d05f274980b73748baf2dee7da0d079, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 757680223}
+    - target: {fileID: 6202740545825364640, guid: 1d05f274980b73748baf2dee7da0d079, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 777118741}
+    - target: {fileID: 6202740545825364640, guid: 1d05f274980b73748baf2dee7da0d079, type: 3}
+      propertyPath: patrolRoute
+      value: 
+      objectReference: {fileID: 1593649612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d05f274980b73748baf2dee7da0d079, type: 3}
 --- !u!33 &1538964818858649694

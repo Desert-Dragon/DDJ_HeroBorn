@@ -93,7 +93,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Bullet(Clone)")
+        if(collision.gameObject.name == "bullet(Clone)")
         {
             EnemyLives -= 1;
             Debug.Log("Hit!");

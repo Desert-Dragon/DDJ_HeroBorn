@@ -26,7 +26,7 @@ public class GameBehavior : MonoBehaviour, IManager
     public bool showWinScreen = false;
     public bool showLossScreen = false;
     public string labelText = "Collect all 4 items and win your freedom!";
-    public int maxItems = 4;
+    public int maxItems = 2;
     private int _itemsCollected = 0;
     public int Items
     {
@@ -103,6 +103,8 @@ public class GameBehavior : MonoBehaviour, IManager
         if(isTickingDamage && _playerHP >= 0)
         {
             showLossScreen = true;
+            Time.timeScale = 0f;
+
         }
     }
 
