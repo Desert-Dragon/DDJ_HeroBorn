@@ -20,8 +20,13 @@ public class GameBehavior : MonoBehaviour, IManager
         _state = "Manager initialized...";
         _state.FancyDebug();
         Debug.Log(_state);
-
+        lootStack.Push("Sword of Doom");
+        lootStack.Push("HP+");
+        lootStack.Push("Golden Key");
+        lootStack.Push("Winged Boot");
+        lootStack.Push("Mythril Bracers");
     }
+    public Stack<string> lootStack = new Stack<string>();
     public bool isTickingDamage = true;
     public bool showWinScreen = false;
     public bool showLossScreen = false;
@@ -106,6 +111,14 @@ public class GameBehavior : MonoBehaviour, IManager
             Time.timeScale = 0f;
 
         }
+    }
+    public void PrintLootReport()
+    {
+        var currentItem = lootStack.Pop();
+        var nextItem = lootStack.Peek();
+        Debug.LogFormat("You got a {0}! You've got a 100.1% chance of finding a {1} next!", currentItem, nextItem);
+        Debug.LogFormat("There are {0} unrandom loot items waiting for you!", lootStack.Count);
+
     }
 
 }
